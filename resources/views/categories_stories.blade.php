@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5 col-lg-3 col-sm-6">
+        <div class="col-md-5 col-lg-3 col-sm-6 catcs">
             <div class="d-flex flex-row col-md-12  ">
                 <div class="col-md-12" id="category-drop">
                     <h6>POPULAR CATEGORIES</h6><br>
@@ -95,20 +95,22 @@
                         </form>
                     </div>
                     <hr style="width:10%;">
-                    <p>Sort By</p>
+                    <p>SORT BY</p>
                     <div class="card" style="width: 15rem;">
                         <form action="{{ url()->current() }}" method="GET">
                             <input type="hidden" name="search" value="{{ request()->query('search') }}">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
+                                    <small style="display: block;">Min Age:</small>
                                     <select class="form-control form-control-sm" name="minAge">
-                                        <option value="">Min age</option>
+                                        <option value="">Any age</option>
                                         @for ($i = 0; $i < 18; $i++)
                                             <option value="{{ $i }}" {{ !is_null(request()->query('minAge')) && request()->query('minAge') == $i ? 'selected' : '' }}>{{ $i }}</option>
                                         @endfor
                                     </select>
-                                    <select class="form-control form-control-sm" name="maxAge" style="margin-top: 8px;">
-                                        <option value="">Max age</option>
+                                    <small style="margin-top: 8px;display: block;">Max Age:</small>
+                                    <select class="form-control form-control-sm" name="maxAge" style="margin-bottom: 8px;">
+                                        <option value="">Any age</option>
                                         @for ($i = 1; $i < 18; $i++)
                                             <option value="{{ $i }}" {{ !is_null(request()->query('minAge')) && request()->query('maxAge') == $i ? 'selected' : '' }}>{{ $i }}</option>
                                         @endfor
@@ -136,13 +138,13 @@
         <div class="row c">
 
             <!--Image Column-->
-            <div class="col-lg-4 col-md-12 col-sm-12 ">
+            <div class="col-lg-4 col-md-12 col-sm-12 pcab">
                 <img src="{{ asset('images/resources/bottom.jpg') }}" alt="" />
             </div>
 
 
             <!--Content Column-->
-            <div class="content-column col-lg-8 col-md-12 col-sm-12">
+            <div class="content-column col-lg-8 pcad col-md-12 col-sm-12">
                 <div class="applink">
                     <h4>Get up close with your child</h4>
                     <div class="text">The Kids Stories app is your go to app for free bedtime stories, fairy tales, poems and short stories for kids. Get in there and start reading!

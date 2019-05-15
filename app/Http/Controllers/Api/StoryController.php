@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Api;
+
 use Auth;
 use DB;
 use App\User;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\StoryResource;
 use App\Http\Resources\SingleStoryResource;
 use Symfony\Component\HttpFoundation\Response;
+
 class StoryController extends Controller
 {
     use UserTrait;
@@ -179,7 +181,11 @@ class StoryController extends Controller
             'bookmark' => $favorite
         ], 200);
     }
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> BE
     /**
      * Update the specified resource in storage.
      *
